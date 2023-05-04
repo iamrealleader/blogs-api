@@ -1,7 +1,12 @@
 
 const express = require('express');
+const app = express();
+const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
+
+// Enable CORS for all routes
+app.use(cors());
 
 const connectDb = require("./connectDb");
 
@@ -13,7 +18,6 @@ const createblog = require("./routes/createblog");
 const delteblog = require("./routes/deleteblog");
 const contact = require("./routes/contact");
 
-const app = express()
 const port = 3000;
 
 // allow accepting of json file in req.body
